@@ -1,0 +1,23 @@
+{
+  "name": "microservices",
+  "version": "1.0.0",
+  "main": "server.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "service": "nodemon ./services/UserService.js",
+    "monitor": "nodemon ./services/MonitorService.js",
+    "server": "json-server --watch db.json",
+    "consul": "./bin/consul agent -dev -node machine -enable-script-checks -config-dir=./consul.d"
+  },
+  "dependencies": {
+    "@polka/parse": "^1.0.0-next.0",
+    "axios": "^0.21.0",
+    "cote": "^1.0.0",
+    "polka": "^0.5.2"
+  },
+  "devDependencies": {
+    "json-server": "^0.16.2",
+    "nodemon": "^2.0.6"
+  }
+}
